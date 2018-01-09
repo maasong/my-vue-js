@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1st Vue.js</title>
+<!-- Css -->
+<style>
+h1{
+  text-align:center;
+  text-transform:uppercase;
+  color:blue;
+}
+</style>
+</head>
+<body>
+<!--main codw-->
+<div id="vue-app">
+  <h1>{{ message }}</h1>
+  <hr />
+  <p>Name: {{ name }}</p>
+  <p>Job: {{ job}}</p>
+  <p>Age: {{ age }} yrs
+  <button v-on:click="age++"> Add Age</button>
+  <button v-on:click="age--"> Sub. Age</button></p>
+  <a v-bind:href="website"> Visit my facebook page</a>
+ <hr />
+ <p>
+    <input type="text" placeholder="Please enter your name" /> <button>submit</button>
+  </p>
+<greetings></greetings>
+  <h3> {{greet()}} </h3>
+</div>
+<!--vue codes-->
+<script src="https://unpkg.com/vue"></script>
+<script>
+<!-- vue Components-->
+Vue.component('greetings',{
+template:'<p>Hey there! welcome to my Vue Js site!</p>'
+})
+new Vue({
+  el: '#vue-app',
+  data: {
+    message: 'The First Time I am Using Vue.js',
+    name: 'Mohammed Abubakar',
+job:'Programmer (in view)',
+    age: 23,
+    website:'http//www.facebook.com/auwaludiddi'
+  },
+  methods:{
+  greet: function(){
+  return 'Have a good Day'
+  }
+  }
+})
+</script>
+</body>
+</html>
